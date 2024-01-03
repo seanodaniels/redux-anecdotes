@@ -13,10 +13,19 @@ const Anecdote = ({ anecdote, handleClick } ) => {
 const Anecdotes = () => {
   const dispatch = useDispatch()
   const anecdotes = useSelector(state => state)
+  const sortByVotes = anecdotes.sort((a,b) => {
+    if (a.votes > b.votes) {
+      return -1
+    }
+    if (a.votes < b.votes) {
+      return 1
+    }
+    return 0
+  })
 
   return(
     <div>
-      {anecdotes.map(a => 
+      {sortByVotes.map(a => 
         <Anecdote 
           key={a.id} 
           anecdote={a} 
