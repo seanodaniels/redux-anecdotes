@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = 'App is Ready.'
+const initialState = 'App is ready.'
 
 const notificationSlice = createSlice({
   name: 'notification',
@@ -14,3 +14,7 @@ const notificationSlice = createSlice({
 
 export const { setNotification } = notificationSlice.actions
 export default notificationSlice.reducer
+
+// setTimeout(() => {
+//   setErrorMessage(null)
+// }, 5000)
