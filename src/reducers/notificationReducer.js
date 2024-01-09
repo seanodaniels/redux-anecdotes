@@ -18,7 +18,6 @@ export const createNotification = (content, timeOut = 3000) => {
     setTimeout(() => {
       dispatch(setNotification('App is ready.'))
     }, timeOut)
-    console.log('timeout:', timeOut)
   }
 }
 
