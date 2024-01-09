@@ -12,9 +12,15 @@ const notificationSlice = createSlice({
   }
 })
 
+export const createNotification = (content, timeOut = 3000) => {
+  return async dispatch => {
+    dispatch(setNotification(content))
+    setTimeout(() => {
+      dispatch(setNotification('App is ready.'))
+    }, timeOut)
+    console.log('timeout:', timeOut)
+  }
+}
+
 export const { setNotification } = notificationSlice.actions
 export default notificationSlice.reducer
-
-// setTimeout(() => {
-//   setErrorMessage(null)
-// }, 5000)
