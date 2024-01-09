@@ -9,7 +9,6 @@ const NewAnecdote = () => {
     e.preventDefault()
     const content = e.target.newAnecdote.value
     e.target.newAnecdote.value = ''
-    // const newAnecdote = await anecdoteService.createNew(content)
     dispatch(createAnecdote(content))
   }
 
